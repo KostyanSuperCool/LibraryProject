@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace libraryProject.Folder;
+namespace libraryProject;
 
 public partial class Book
 {
@@ -19,11 +19,11 @@ public partial class Book
 
     public string YearOfPublication { get; set; } = null!;
 
-    public string Paper { get; set; } = null!;
+    public decimal Paper { get; set; }
 
-    public string All { get; set; } = null!;
+    public decimal All { get; set; }
 
-    public string Available { get; set; } = null!;
+    public decimal Available { get; set; }
 
     public string Annotation { get; set; } = null!;
 

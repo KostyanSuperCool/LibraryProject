@@ -1,4 +1,4 @@
-using libraryProject.Folder;
+using libraryProject;
 
 namespace libraryProject
 {

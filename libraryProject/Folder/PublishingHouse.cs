@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace libraryProject.Folder;
+namespace libraryProject;
 
 public partial class PublishingHouse
 {

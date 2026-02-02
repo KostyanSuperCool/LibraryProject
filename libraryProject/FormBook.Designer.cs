@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panelTop = new Panel();
-            dgvBook = new DataGridView();
-            btnLogin = new Button();
             lblUserName = new Label();
+            btnLogin = new Button();
+            dgvBook = new DataGridView();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBook).BeginInit();
             SuspendLayout();
@@ -48,45 +48,6 @@
             panelTop.Size = new Size(964, 40);
             panelTop.TabIndex = 0;
             // 
-            // dgvBook
-            // 
-            dgvBook.AllowUserToAddRows = false;
-            dgvBook.AllowUserToDeleteRows = false;
-            dgvBook.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvBook.BackgroundColor = Color.White;
-            dgvBook.BorderStyle = BorderStyle.None;
-            dgvBook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvBook.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvBook.Dock = DockStyle.Fill;
-            dgvBook.Location = new Point(10, 50);
-            dgvBook.MultiSelect = false;
-            dgvBook.Name = "dgvBook";
-            dgvBook.ReadOnly = true;
-            dgvBook.RowHeadersVisible = false;
-            dgvBook.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBook.Size = new Size(964, 601);
-            dgvBook.TabIndex = 1;
-            // 
-            // btnLogin
-            // 
-            btnLogin.BackColor = Color.FromArgb(74, 111, 165);
-            btnLogin.Dock = DockStyle.Right;
-            btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Location = new Point(814, 0);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(150, 30);
-            btnLogin.TabIndex = 3;
-            btnLogin.Text = "Войти";
-            btnLogin.UseVisualStyleBackColor = false;
-            // 
             // lblUserName
             // 
             lblUserName.AutoSize = true;
@@ -98,6 +59,47 @@
             lblUserName.Text = "label1";
             lblUserName.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.FromArgb(74, 111, 165);
+            btnLogin.Dock = DockStyle.Right;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Location = new Point(814, 0);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(150, 30);
+            btnLogin.TabIndex = 3;
+            btnLogin.Text = "Выход";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += BtnLogin_Click;
+            // 
+            // dgvBook
+            // 
+            dgvBook.AllowUserToAddRows = false;
+            dgvBook.AllowUserToDeleteRows = false;
+            dgvBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvBook.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvBook.BackgroundColor = Color.White;
+            dgvBook.BorderStyle = BorderStyle.None;
+            dgvBook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvBook.DefaultCellStyle = dataGridViewCellStyle1;
+            dgvBook.Dock = DockStyle.Fill;
+            dgvBook.Location = new Point(10, 50);
+            dgvBook.MultiSelect = false;
+            dgvBook.Name = "dgvBook";
+            dgvBook.ReadOnly = true;
+            dgvBook.RowHeadersVisible = false;
+            dgvBook.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvBook.Size = new Size(964, 601);
+            dgvBook.TabIndex = 1;
+            // 
             // FormBook
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
@@ -107,7 +109,7 @@
             Controls.Add(dgvBook);
             Controls.Add(panelTop);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormBook";
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;

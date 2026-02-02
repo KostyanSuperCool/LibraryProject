@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace libraryProject.Folder;
+namespace libraryProject;
 
 public partial class LibraryKiselevContext : DbContext
 {

@@ -17,7 +17,7 @@ public partial class User
 
     public string Password { get; set; } = null!;
 
-    public virtual LibraryCard IdLibraryCardNavigation { get; set; } = null!;
+    public virtual LibraryCard LibraryCard { get; set; } = null!;
 
-    public virtual Role IdRoleNavigation { get; set; } = null!;
+    public virtual Role Role { get; set; } = null!;
 }

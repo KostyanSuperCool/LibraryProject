@@ -58,17 +58,17 @@ public partial class LibraryKiselevContext : DbContext
             entity.Property(e => e.Photo).HasColumnName("photo");
             entity.Property(e => e.YearOfPublication).HasColumnName("year_of_publication");
 
-            entity.HasOne(d => d.IdCreatorNavigation).WithMany(p => p.Books)
+            entity.HasOne(d => d.Creator).WithMany(p => p.Books)
                 .HasForeignKey(d => d.IdCreator)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("books_id_creator_fkey");
 
-            entity.HasOne(d => d.IdGenreNavigation).WithMany(p => p.Books)
+            entity.HasOne(d => d.Ganre).WithMany(p => p.Books)
                 .HasForeignKey(d => d.IdGenre)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("books_id_genre_fkey");
 
-            entity.HasOne(d => d.IdPublishingNavigation).WithMany(p => p.Books)
+            entity.HasOne(d => d.PublishingHouse).WithMany(p => p.Books)
                 .HasForeignKey(d => d.IdPublishing)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("books_id_publishing_fkey");
@@ -91,17 +91,17 @@ public partial class LibraryKiselevContext : DbContext
             entity.Property(e => e.IdStatus).HasColumnName("id_status");
             entity.Property(e => e.PlannedReturnDate).HasColumnName("planned_return_date");
 
-            entity.HasOne(d => d.IdIsbnNavigation).WithMany(p => p.BooksLoans)
+            entity.HasOne(d => d.Book).WithMany(p => p.BooksLoans)
                 .HasForeignKey(d => d.IdIsbn)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("books_loans_id_ISBN_fkey");
 
-            entity.HasOne(d => d.IdLibraryCardNavigation).WithMany(p => p.BooksLoans)
+            entity.HasOne(d => d.LibraryCard).WithMany(p => p.BooksLoans)
                 .HasForeignKey(d => d.IdLibraryCard)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("books_loans_id_library_card_fkey");
 
-            entity.HasOne(d => d.IdStatusNavigation).WithMany(p => p.BooksLoans)
+            entity.HasOne(d => d.Status).WithMany(p => p.BooksLoans)
                 .HasForeignKey(d => d.IdStatus)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("books_loans_id_status_fkey");
@@ -180,12 +180,12 @@ public partial class LibraryKiselevContext : DbContext
             entity.Property(e => e.Password).HasColumnName("password");
             entity.Property(e => e.UserName).HasColumnName("user_name");
 
-            entity.HasOne(d => d.IdLibraryCardNavigation).WithMany(p => p.Users)
+            entity.HasOne(d => d.LibraryCard).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdLibraryCard)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("users_id_library_card_fkey");
 
-            entity.HasOne(d => d.IdRoleNavigation).WithMany(p => p.Users)
+            entity.HasOne(d => d.Role).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdRole)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("users_id_role_fkey");

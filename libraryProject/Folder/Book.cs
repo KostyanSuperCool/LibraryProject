@@ -31,9 +31,9 @@ public partial class Book
 
     public virtual ICollection<BooksLoan> BooksLoans { get; set; } = new List<BooksLoan>();
 
-    public virtual Creator IdCreatorNavigation { get; set; } = null!;
+    public virtual Creator Creator { get; set; } = null!;
 
-    public virtual Ganre IdGenreNavigation { get; set; } = null!;
+    public virtual Ganre Ganre { get; set; } = null!;
 
-    public virtual PublishingHouse IdPublishingNavigation { get; set; } = null!;
+    public virtual PublishingHouse PublishingHouse { get; set; } = null!;
 }

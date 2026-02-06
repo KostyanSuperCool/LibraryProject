@@ -29,6 +29,8 @@ namespace libraryProject
             colPhoto.Width = 200;
             colPhoto.FillWeight = 30;
 
+            this.Resize += FormBook_Resize;
+
             var colInfo = new DataGridViewTextBoxColumn();
             colInfo.Name = "Информация";
             colInfo.FillWeight = 60;
@@ -47,6 +49,22 @@ namespace libraryProject
             lblUserName.Text = IsGuest ? "Гость" : CurrentUser.UserName;
 
             LoadProducts();
+        }
+
+        private void FormBook_Resize(object? sender, EventArgs e)
+        {
+            var Photo = dgvBook.Columns["Фото"] as DataGridViewImageColumn;
+            if (Photo != null)
+            {
+                if(this.WindowState == FormWindowState.Maximized)
+                {
+                    Photo.FillWeight = 10;
+                }
+                else
+                {
+                    Photo.FillWeight = 30;
+                }
+            }
         }
 
         private void LoadProducts()
